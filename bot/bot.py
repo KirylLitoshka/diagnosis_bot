@@ -1,6 +1,7 @@
-from aiogram import Dispatcher, Bot, executor
+from aiogram import Bot, Dispatcher, executor
 from aiogram.contrib.fsm_storage.files import JSONStorage
-from bot.dispatcher import on_startup, on_shutdown
+
+from bot.dispatcher import on_shutdown, on_startup
 from bot.settings import STORAGE
 
 
