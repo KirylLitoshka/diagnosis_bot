@@ -1,5 +1,5 @@
-from bot.handlers import *
 from bot.fsm_states import Profile
+from bot.handlers import *
 
 
 async def on_startup(dispatcher):
@@ -17,6 +17,10 @@ async def on_startup(dispatcher):
         process_defect_reason_selection, state=Profile.defect_reason)
     dispatcher.register_message_handler(
         process_date_selection, state=Profile.date)
+    dispatcher.register_message_handler(
+        process_time_selection, state=Profile.time)
+    dispatcher.register_message_handler(
+        process_contact_submit, state=Profile.contact)
 
 
 async def on_shutdown(dispatcher):
