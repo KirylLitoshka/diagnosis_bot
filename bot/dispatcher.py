@@ -6,6 +6,8 @@ async def on_startup(dispatcher):
     dispatcher.register_message_handler(
         process_start, commands=["start"], state="*")
     dispatcher.register_message_handler(
+        prev_state_handler, lambda msg: msg.text == "Назад", state="*")
+    dispatcher.register_message_handler(
         process_city_selection, state=Profile.city)
     dispatcher.register_message_handler(
         process_device_type_selection, state=Profile.device_type)
