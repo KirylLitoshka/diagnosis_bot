@@ -5,8 +5,8 @@ from bot.dispatcher import on_shutdown, on_startup
 from bot.settings import STORAGE
 
 
-def start_bot():
-    bot = Bot("")
+def start_bot(token: str):
+    bot = Bot(token=token)
     dispatcher = Dispatcher(bot, storage=JSONStorage(STORAGE))
     executor.start_polling(
         dispatcher=dispatcher,
